@@ -47,12 +47,12 @@ export function TimelinePanel() {
 
           <div className="bg-border-subtle mx-2 h-4 w-px" />
 
-          <IconButton size="sm" label="Split at playhead (S)" onClick={splitAtPlayhead}>
+          <IconButton size="sm" label="Dividir na posição atual (S)" onClick={splitAtPlayhead}>
             <Scissors size={14} />
           </IconButton>
           <IconButton
             size="sm"
-            label="Ripple delete selection (Delete)"
+            label="Eliminar seleção e fechar espaço (Delete)"
             disabled={selectionCount === 0}
             onClick={deleteSelected}
           >
@@ -60,7 +60,7 @@ export function TimelinePanel() {
           </IconButton>
           <IconButton
             size="sm"
-            label="Toggle snapping (N)"
+            label="Ativar/desativar alinhamento (N)"
             active={snapEnabled}
             onClick={toggleSnap}
           >
@@ -71,7 +71,7 @@ export function TimelinePanel() {
 
           <IconButton
             size="sm"
-            label="Set export in-point at playhead (I)"
+            label="Definir início da exportação (I)"
             active={inPoint !== null}
             onClick={() => setInPoint(playhead)}
           >
@@ -79,14 +79,14 @@ export function TimelinePanel() {
           </IconButton>
           <IconButton
             size="sm"
-            label="Set export out-point at playhead (O)"
+            label="Definir fim da exportação (O)"
             active={outPoint !== null}
             onClick={() => setOutPoint(playhead)}
           >
             <SquareChevronLeft size={14} />
           </IconButton>
           {hasRange && (
-            <IconButton size="sm" label="Clear export range" onClick={clearInOut}>
+            <IconButton size="sm" label="Limpar intervalo de exportação" onClick={clearInOut}>
               <Braces size={14} />
             </IconButton>
           )}
@@ -97,10 +97,10 @@ export function TimelinePanel() {
             <span className="text-text-tertiary mr-2 text-xs">{selectionCount} selected</span>
           )}
 
-          <IconButton size="sm" label="Zoom out" onClick={() => zoomBy(1 / 1.3)}>
+          <IconButton size="sm" label="Diminuir zoom" onClick={() => zoomBy(1 / 1.3)}>
             <ZoomOut size={14} />
           </IconButton>
-          <IconButton size="sm" label="Zoom in" onClick={() => zoomBy(1.3)}>
+          <IconButton size="sm" label="Aumentar zoom" onClick={() => zoomBy(1.3)}>
             <ZoomIn size={14} />
           </IconButton>
         </div>
