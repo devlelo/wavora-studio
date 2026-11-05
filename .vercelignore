@@ -1,0 +1,13 @@
+# Everything Vercel rebuilds itself. Uploading these pushes the deployment past
+# the 100 MB file limit and wastes minutes on every deploy.
+node_modules
+.turbo
+.next
+out
+dist
+
+# Local-only
+.git
+.env.local
+coverage
+playwright-report
