@@ -62,7 +62,7 @@ export function TopToolbar() {
 
       <IconButton
         size="sm"
-        label={undoable ? `Undo ${history.present.label} (Cmd+Z)` : "Nada para desfazer"}
+        label={undoable ? `Desfazer ${history.present.label} (Ctrl+Z)` : "Nada para desfazer"}
         disabled={!undoable}
         onClick={undo}
       >
