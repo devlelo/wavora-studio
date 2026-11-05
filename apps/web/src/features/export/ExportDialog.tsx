@@ -115,7 +115,7 @@ export function ExportDialog({ onClose }: { onClose: () => void }) {
       >
         <div className="mb-3 flex items-center justify-between">
           <h2 className="text-text-primary text-sm font-semibold">Exportar vídeo</h2>
-          <IconButton size="sm" label="Close" onClick={onClose} disabled={isExporting}>
+          <IconButton size="sm" label="Fechar" onClick={onClose} disabled={isExporting}>
             <X size={14} />
           </IconButton>
         </div>
@@ -128,14 +128,14 @@ export function ExportDialog({ onClose }: { onClose: () => void }) {
           />
         ) : (
           <div className="flex flex-col gap-2.5">
-            <Field label="Format">
+            <Field label="Formato">
               <Select value={format} onChange={(v) => setFormat(v as ExportFormat)}>
                 <option value="mp4">MP4 (H.264)</option>
                 <option value="webm">WebM (VP9)</option>
               </Select>
             </Field>
 
-            <Field label="Resolution">
+            <Field label="Resolução">
               <Select value={String(height)} onChange={(v) => setHeight(Number(v))}>
                 <option value={String(projectRes.height)}>
                   Project ({projectRes.width}×{projectRes.height})
@@ -163,16 +163,16 @@ export function ExportDialog({ onClose }: { onClose: () => void }) {
               </Select>
             </Field>
 
-            <Field label="Quality">
+            <Field label="Qualidade">
               <Select value={quality} onChange={(v) => setQuality(v as Quality)}>
-                <option value="high">High</option>
-                <option value="medium">Medium</option>
-                <option value="low">Low</option>
+                <option value="high">Alta</option>
+                <option value="medium">Média</option>
+                <option value="low">Baixa</option>
               </Select>
             </Field>
 
             {hasSelection && (
-              <Field label="Range">
+              <Field label="Intervalo">
                 <Select
                   value={useSelection ? "selection" : "full"}
                   onChange={(v) => setUseSelection(v === "selection")}
@@ -181,7 +181,7 @@ export function ExportDialog({ onClose }: { onClose: () => void }) {
                     In–Out ({formatTimecode(selection.start, projectFps)}–
                     {formatTimecode(selection.end, projectFps)})
                   </option>
-                  <option value="full">Full timeline</option>
+                  <option value="full">Linha temporal completa</option>
                 </Select>
               </Field>
             )}
@@ -231,7 +231,7 @@ function ProgressView({
   return (
     <div className="flex flex-col gap-3 py-2">
       <div className="flex items-center justify-between text-xs">
-        <span className="text-text-secondary">{label[phase] ?? "Exporting…"}</span>
+        <span className="text-text-secondary">{label[phase] ?? "A exportar…"}</span>
         <span className="text-text-tertiary tabular">{percent}%</span>
       </div>
       <div className="bg-surface-raised h-2 overflow-hidden rounded-full">
