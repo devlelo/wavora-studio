@@ -95,23 +95,23 @@ export function PreviewPanel() {
         </span>
 
         <div className="flex flex-1 items-center justify-center gap-0.5">
-          <IconButton label="Go to start" onClick={() => setPlayhead(0)}>
+          <IconButton label="Ir para o início" onClick={() => setPlayhead(0)}>
             <SkipBack size={15} />
           </IconButton>
-          <IconButton label="Previous frame" onClick={() => setPlayhead(playhead - 1)}>
+          <IconButton label="Fotograma anterior" onClick={() => setPlayhead(playhead - 1)}>
             <ChevronsLeft size={15} />
           </IconButton>
           <IconButton
-            label={isPlaying ? "Pause (Space)" : "Play (Space)"}
+            label={isPlaying ? "Pausar (Espaço)" : "Reproduzir (Espaço)"}
             variant="secondary"
             onClick={togglePlaying}
           >
             {isPlaying ? <Pause size={15} /> : <Play size={15} />}
           </IconButton>
-          <IconButton label="Next frame" onClick={() => setPlayhead(playhead + 1)}>
+          <IconButton label="Fotograma seguinte" onClick={() => setPlayhead(playhead + 1)}>
             <ChevronsRight size={15} />
           </IconButton>
-          <IconButton label="Go to end" onClick={() => setPlayhead(duration)}>
+          <IconButton label="Ir para o fim" onClick={() => setPlayhead(duration)}>
             <SkipForward size={15} />
           </IconButton>
         </div>
@@ -119,7 +119,7 @@ export function PreviewPanel() {
         <div className="flex w-24 justify-end">
           <IconButton
             size="sm"
-            label="Toggle safe guides"
+            label="Mostrar/ocultar guias de segurança"
             active={showGuides}
             onClick={() => setShowGuides((value) => !value)}
           >
