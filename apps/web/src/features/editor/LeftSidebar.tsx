@@ -37,7 +37,7 @@ export function LeftSidebar() {
   return (
     <div className="flex h-full">
       <nav
-        aria-label="Editor sections"
+        aria-label="Secções do editor"
         className="border-border-subtle bg-surface-base flex w-12 shrink-0 flex-col items-center gap-1 border-r py-2"
       >
         {SECTIONS.map((section) => {
