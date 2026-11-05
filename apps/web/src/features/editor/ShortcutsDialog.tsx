@@ -85,7 +85,7 @@ export function ShortcutsDialog({ onClose }: { onClose: () => void }) {
       >
         <div className="mb-3 flex items-center justify-between">
           <h2 className="text-text-primary text-sm font-semibold">Atalhos de teclado</h2>
-          <IconButton size="sm" label="Close" onClick={onClose}>
+          <IconButton size="sm" label="Fechar" onClick={onClose}>
             <X size={14} />
           </IconButton>
         </div>
